@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Color } from 'src/app/model/color.model';
+import { Pin } from 'src/app/model/pin.model';
 
 @Component({
   selector: 'app-configuration',
@@ -14,14 +16,20 @@ export class ConfigurationComponent implements OnInit {
     this.nbrPinEmitter.emit(this.nbrOfPins); 
   }
 
+  chosenNbrOfTries: number = 4; 
+  nbrOfPins: number = 4;  
+
+  multiplayer: boolean = false; 
+  enterDisplayed: boolean = false; 
+  resetDisplayed: boolean = false; 
+
+  combinationSolution: Pin[] =[]; 
+
   @Output('nbTries')
   nbtriesEmitter = new EventEmitter<number>(); 
 
   @Output('nbPin') 
   nbrPinEmitter = new EventEmitter<number>();
-
-  chosenNbrOfTries: number = 4; 
-  nbrOfPins: number = 4;  
 
   @Input()
   displayConfiguration!: boolean; 
@@ -33,4 +41,8 @@ export class ConfigurationComponent implements OnInit {
   onChangePins(){
     this.nbrPinEmitter.emit(this.nbrOfPins); 
   }
+
+
+
+
 }

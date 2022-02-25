@@ -24,14 +24,15 @@
 <div>
     <app-configuration [displayConfiguration] = "displayConfiguration"
                        (nbPin)="changeNbrPins($event)"
-                       (nbTries)="changeNbrTries($event)"></app-configuration>
+                       (nbTries)="changeNbrTries($event)"
+                       ></app-configuration>
 <br>
     <app-old-combination [oldCombination]= "oldCombination"></app-old-combination>
 
     <app-player-choice (combinationPlayer)="validation($event)"
                        (configurationToDisplay)="configurationToDisplay($event)"
                        [gameOn] = "gameOn"
-                       [nbrOfPins]="nbrOfPins"></app-player-choice>
+                       [nbrOfPins]= "nbrOfPins" ></app-player-choice>
     
     <app-solution [solution] = "combinationSolution" 
                   [gameOn] = "gameOn" ></app-solution>

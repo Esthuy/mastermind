@@ -16,7 +16,6 @@ export class PlayerChoiceComponent implements OnInit {
 
   enterDisplayed: boolean = false; 
   resetDisplayed: boolean = false;
-  empty: boolean = true; 
   displayConfiguration: boolean = true;
  
 
@@ -62,7 +61,6 @@ export class PlayerChoiceComponent implements OnInit {
         color: param, 
         status: undefined
         })
-      this.empty = false; 
       } else{
         alert("Vous avez déjà choisis toutes les couleurs, veuillez valider ou réinitialiser")
       }

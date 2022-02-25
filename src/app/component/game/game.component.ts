@@ -16,7 +16,7 @@ export class GameComponent {
   playerWin: boolean = false; 
   playerLose: boolean = false; 
   displayConfiguration!: boolean; 
-
+ 
   gameOn: boolean = true;
 
   nbrOfTries: number = 0; 
@@ -156,5 +156,7 @@ export class GameComponent {
     this.chosenNbrOfTries = nbrTries;
     this.initializeSolution(); 
   }
+
+
 
 }
