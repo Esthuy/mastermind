@@ -1,1 +1,14 @@
-<p>old-combination works!</p>
+
+
+<!-- Display all combination of pin chosen by user -->
+<div class="oldCombination">
+    <div *ngFor="let pins of oldCombination; let index = index;">
+        <td *ngFor="let pin of pins"
+            [ngStyle]="{ 'background-color': pin.color }" 
+            [ngClass]="{'choice' : true, 
+                        'correct' : pin.status == 'correct', 
+                        'wrong-color' : pin.status == 'wrong-color', 
+                        'wrong-position' : pin.status == 'wrong-position'}"></td>
+
+    </div> 
+</div>

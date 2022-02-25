@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Color } from 'src/app/model/color.model';
 import { Pin } from 'src/app/model/pin.model';
 
@@ -9,20 +9,19 @@ import { Pin } from 'src/app/model/pin.model';
 })
 export class GameComponent {
 
-  constructor() { this.initializeSolution(); }
+  constructor(private cdref: ChangeDetectorRef) { this.initializeSolution(); }
 
   enterDisplayed: boolean = false; 
   resetDisplayed: boolean = false;
-  empty: boolean = true; 
   playerWin: boolean = false; 
   playerLose: boolean = false; 
-  displayConfiguration: boolean = true; 
+  displayConfiguration!: boolean; 
 
   gameOn: boolean = true;
 
   nbrOfTries: number = 0; 
-  chosenNbrOfTries: number = 5; 
-  nbrOfPins: number = 4;  
+  chosenNbrOfTries!: number; 
+  nbrOfPins!: number;  
   
   colors:{
     [color: string] : Color, 
@@ -71,7 +70,6 @@ export class GameComponent {
 
   start(){
     this.initializeSolution();  
-    //Pas de reset, est-ce un problème ? 
     this.oldCombination = [[]]; 
     this.gameOn = true; 
     this.nbrOfTries = 0; 
@@ -141,6 +139,22 @@ export class GameComponent {
       this.gameOn = false; 
       this.playerLose = true;
     }
+
+  }
+
+  configurationToDisplay(display: boolean){
+    this.displayConfiguration = display; 
+    this.cdref.detectChanges();
+  }
+
+  changeNbrPins(nbrPins : number){
+    this.nbrOfPins = nbrPins; 
+    this.initializeSolution();
+  }
+
+  changeNbrTries(nbrTries : number){
+    this.chosenNbrOfTries = nbrTries;
+    this.initializeSolution(); 
   }
 
 }

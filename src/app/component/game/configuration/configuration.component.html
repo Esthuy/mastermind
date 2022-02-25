@@ -1,0 +1,32 @@
+<!-- Allow player to chose the number of pins and the numbers of tries -->
+
+<div *ngIf="displayConfiguration" class="configuration">
+    <label for="tries">Nombres d'essais autorisés</label><br>
+    <select  [(ngModel)]="chosenNbrOfTries" (change)="onChangeTries()">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+</select>
+
+<br>
+<label for="pins">Nombres de couleurs à trouver</label><br>
+<select [(ngModel)]="nbrOfPins" (change)="onChangePins()">
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+</select>
+
+<br>
+<label>Multijoueur</label>
+<input type="checkbox">
+</div>
+
+

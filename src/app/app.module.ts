@@ -7,6 +7,8 @@ import { GameComponent } from './component/game/game.component';
 import { PlayerChoiceComponent } from './component/game/player-choice/player-choice.component';
 import { OldCombinationComponent } from './component/game/old-combination/old-combination.component';
 import { SolutionComponent } from './component/game/solution/solution.component';
+import { ConfigurationComponent } from './component/game/configuration/configuration.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { SolutionComponent } from './component/game/solution/solution.component'
     GameComponent,
     PlayerChoiceComponent,
     OldCombinationComponent,
-    SolutionComponent
+    SolutionComponent,
+    ConfigurationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

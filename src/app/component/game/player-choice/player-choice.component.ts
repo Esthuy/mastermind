@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Color } from 'src/app/model/color.model';
 import { Pin } from 'src/app/model/pin.model';
 
@@ -11,19 +11,28 @@ export class PlayerChoiceComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { this.configurationToDisplay.emit(this.displayConfiguration); 
   }
 
   enterDisplayed: boolean = false; 
   resetDisplayed: boolean = false;
   empty: boolean = true; 
-  gameOn: boolean = true; 
-  displayConfiguration: boolean = true; 
+  displayConfiguration: boolean = true;
+ 
 
-  nbrOfPins: number = 4;  
+  @Input('nbrOfPins')
+  nbrOfPins!: number;  
+
+  @Input('gameOn')
+  gameOn: boolean = true; 
 
   @Output('combinationPlayer')
   playerEmitter = new EventEmitter<Pin[]>(); 
+
+  @Output('configurationToDisplay')
+  configurationToDisplay = new EventEmitter<boolean>();
+
+ 
 
 
   combinationPlayer : Pin[] = []; 
@@ -45,6 +54,7 @@ export class PlayerChoiceComponent implements OnInit {
 
   onColorClick(param: Color){
     this.displayConfiguration = false; 
+    this.configurationToDisplay.emit(this.displayConfiguration); 
 
     //Add chosen pin to the combinationPlayer 
     if(this.combinationPlayer.length < this.nbrOfPins){
