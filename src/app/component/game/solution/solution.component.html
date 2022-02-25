@@ -1,0 +1,11 @@
+<p>solution works!</p>
+
+
+<!-- Display the solution when game is over-->
+<ng-container *ngIf="!gameOn">
+    <p>Solution : </p>  
+    <td *ngFor="let pin of combinationSolution; let index = index;" 
+        [ngStyle]="{ 'background-color': pin.color }"
+        [ngClass]="{'choice' : true}">
+    </td> 
+</ng-container>

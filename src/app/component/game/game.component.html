@@ -1,0 +1,34 @@
+<p>game works!</p>
+
+
+<!-- TODO vérifier les css pour virer superflus -->
+<!-- TODO multijoeur -->
+<!-- Changer pin status en colors (jaune-rouge et vert) pour n'afficher que  [ngStyle]="{ 'background-color': pin.color, 'border-color: pin.status'}" -->
+<div>
+    <app-player-choice (combinationPlayer)="validation($event)"></app-player-choice>
+
+    <app-old-combination></app-old-combination>
+    
+    <app-solution [solution] = combinationSolution 
+                  [gameOn] = gameOn ></app-solution>
+</div>
+
+<!-- Display all combination of pin chosen by user -->
+<div class="oldCombination">
+    <div *ngFor="let pins of oldCombination; let index = index;">
+        <td *ngFor="let pin of pins"
+            [ngStyle]="{ 'background-color': pin.color }" 
+            [ngClass]="{'choice' : true, 
+                        'correct' : pin.status == 'correct', 
+                        'wrong-color' : pin.status == 'wrong-color', 
+                        'wrong-position' : pin.status == 'wrong-position'}"></td>
+
+    </div> 
+</div>
+<br>
+
+
+<div>
+    <button *ngIf="!gameOn" (click)="start()" class="button buttonValid">New game</button>
+</div>
+

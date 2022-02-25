@@ -1,0 +1,27 @@
+<p>player-choice works!</p>
+
+
+<!-- Display chosen pin color by user -->
+<ng-container *ngIf="gameOn">
+    <td *ngFor="let pin of combinationPlayer; let index = index;" 
+          [ngStyle]="{ 'background-color': pin.color }"
+          class="choice">
+    </td> 
+</ng-container>
+
+
+<!-- Display button to chose pin colors-->
+<div *ngIf="gameOn">
+    <button (click)="onColorClick(colors['green'])" class="button">green</button> 
+    <button (click)="onColorClick(colors['blue'])" class="button button2">blue</button> 
+    <button (click)="onColorClick(colors['red'])" class="button button3" >red</button> 
+    <button (click)="onColorClick(colors['yellow'])" class="button button4">yellow</button> 
+    <button (click)="onColorClick(colors['brown'])" class="button button5">brown</button> 
+    <button (click)="onColorClick(colors['purple'])" class="button button6">purple</button> 
+    <button (click)="onColorClick(colors['pink'])" class="button button7">pink</button> <br>
+
+    <button *ngIf="enterDisplayed" (click)="validation()" class="button buttonValid">Enter</button>  
+ 
+    <button *ngIf="resetDisplayed" (click)="reset()" class="button buttonValid">Reset</button> 
+
+</div>

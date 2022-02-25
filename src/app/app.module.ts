@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './main/main.component';
-import { PlayerChoiceComponent } from './main/player-choice/player-choice.component';
-import { OldCombinationComponent } from './main/old-combination/old-combination.component';
-import { SolutionComponent } from './main/solution/solution.component';
+import { GameComponent } from './component/game/game.component';
+import { PlayerChoiceComponent } from './component/game/player-choice/player-choice.component';
+import { OldCombinationComponent } from './component/game/old-combination/old-combination.component';
+import { SolutionComponent } from './component/game/solution/solution.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
+    GameComponent,
     PlayerChoiceComponent,
     OldCombinationComponent,
     SolutionComponent
