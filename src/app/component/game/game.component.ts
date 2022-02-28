@@ -16,7 +16,7 @@ export class GameComponent {
   playerWin: boolean = false; 
   playerLose: boolean = false; 
   displayConfiguration!: boolean; 
-  multiplayer!: boolean; 
+  multiplayer!: boolean;
 
  
   gameOn: boolean = true;

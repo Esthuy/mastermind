@@ -2,12 +2,13 @@
 
 
 <!-- TODO vérifier les css pour virer superflus -->
-<!-- TODO multijoeur -->
 <!-- Changer pin status en colors (jaune-rouge et vert) pour n'afficher que  [ngStyle]="{ 'background-color': pin.color, 'border-color: pin.status'}" -->
 
-<h3>Mastermind</h3>
-<br>
+<!-- TODO bug si multiplayer et restart cliqué plusieurs fois -->
+<!-- TODO bug, restart gris apparait tout de suite si restart noir est préssé  -->
 
+
+<h3>Mastermind</h3>
 
 <!-- Display message when user wins -->
 <div *ngIf="playerWin">
@@ -37,10 +38,11 @@
     <app-player-choice (combinationPlayer)="validation($event)"
                        (configurationToDisplay)="configurationToDisplay($event)"
                        (solutionByPlayer)="validationSolution($event)"
-                       (restart)="start()"
+                       (start)="start()"
                        [gameOn] = "gameOn"
                        [nbrOfPins]= "nbrOfPins" 
-                       [choosingSolution]="multiplayer"
+                       [choosingSolution]= "multiplayer"
+                       
                       ></app-player-choice>
     
     
@@ -55,6 +57,9 @@
 <div>
     <button *ngIf="!gameOn" (click)="start()" class="button buttonValid">New game</button>
 </div>
+
+
+
 
 
 

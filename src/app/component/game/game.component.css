@@ -3,6 +3,11 @@ div, h3, p{
     font-family: Arial;
 }
 
+h3{
+   font-size: 40px;
+   color: rgb(73, 73, 73)
+}
+
 
 .button {
     background-color: #4CAF50; /* Green */

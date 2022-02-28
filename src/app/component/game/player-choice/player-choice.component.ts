@@ -18,7 +18,6 @@ export class PlayerChoiceComponent implements OnInit {
   resetDisplayed: boolean = false;
   displayConfiguration: boolean = true;
   displayValidationSolution: boolean = false; 
-  started: boolean = false; 
   player2message: boolean = false; 
  
 
@@ -31,6 +30,9 @@ export class PlayerChoiceComponent implements OnInit {
   @Input('choosingSolution')
   choosingSolution: boolean = false; 
 
+  @Input('started')
+  started: boolean = false; 
+
   @Output('combinationPlayer')
   playerEmitter = new EventEmitter<Pin[]>(); 
 
@@ -40,8 +42,8 @@ export class PlayerChoiceComponent implements OnInit {
   @Output('solutionByPlayer')
   solutionEmitter = new EventEmitter<Pin[]>(); 
 
-  @Output('restart')
-  restartEmitter = new EventEmitter(); 
+  @Output('start')
+  startEmitter = new EventEmitter(); 
  
 
 
@@ -101,10 +103,12 @@ export class PlayerChoiceComponent implements OnInit {
     this.displayValidationSolution = false; 
   }
 
-  restart(){
+  start(){
     this.reset(); 
-    this.restartEmitter.emit(); 
+    this.startEmitter.emit(); 
     this.started = false; 
+    this.player2message = false; 
+    this.choosingSolution = false; 
   }
 
   validation(){
