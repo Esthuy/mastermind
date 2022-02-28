@@ -88,8 +88,8 @@ export class GameComponent {
 
  
   validation(combinationPlayer : Pin[]) {
+    
     this.startClicked = false;
-    console.log(combinationPlayer);
     let correctPin: number = 0; 
     const oneCombination = [];
   
