@@ -80,7 +80,7 @@ export class GameComponent {
     this.displayConfiguration = true; 
   }
 
-
+ 
   validation(combinationPlayer : Pin[]) {
     console.log(combinationPlayer);
     let correctPin: number = 0; 

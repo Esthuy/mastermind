@@ -18,6 +18,8 @@ export class PlayerChoiceComponent implements OnInit {
   resetDisplayed: boolean = false;
   displayConfiguration: boolean = true;
   displayValidationSolution: boolean = false; 
+  started: boolean = false; 
+  player2message: boolean = false; 
  
 
   @Input('nbrOfPins')
@@ -38,6 +40,8 @@ export class PlayerChoiceComponent implements OnInit {
   @Output('solutionByPlayer')
   solutionEmitter = new EventEmitter<Pin[]>(); 
 
+  @Output('restart')
+  restartEmitter = new EventEmitter(); 
  
 
 
@@ -60,6 +64,8 @@ export class PlayerChoiceComponent implements OnInit {
 
 
   onColorClick(param: Color){
+    this.player2message = false; 
+    this.started = true; 
     this.displayConfiguration = false; 
     this.configurationToDisplay.emit(this.displayConfiguration); 
 
@@ -95,6 +101,12 @@ export class PlayerChoiceComponent implements OnInit {
     this.displayValidationSolution = false; 
   }
 
+  restart(){
+    this.reset(); 
+    this.restartEmitter.emit(); 
+    this.started = false; 
+  }
+
   validation(){
     this.playerEmitter.emit(this.combinationPlayer); 
     this.reset(); 
@@ -104,6 +116,7 @@ export class PlayerChoiceComponent implements OnInit {
     this.solutionByPlayer = this.combinationPlayer; 
     this.solutionEmitter.emit(this.solutionByPlayer); 
     this.reset(); 
+    this.player2message = true; 
   }
 }
 

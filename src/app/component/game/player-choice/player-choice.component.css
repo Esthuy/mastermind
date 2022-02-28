@@ -1,10 +1,8 @@
-body{
+body, div{
     font-family: Arial;
  }
  
- div{
-   font-family: Arial;
- }
+ 
  .button {
      background-color: #4CAF50; /* Green */
      border: none;
@@ -28,6 +26,11 @@ body{
    .buttonValid {
     background-color: rgb(75, 71, 71);
     padding: 10px 26px;
+  }
+
+  .buttonRestart{
+    background-color: rgb(155, 150, 150);
+    padding: 10px 14px;
   }
 
  .choice{

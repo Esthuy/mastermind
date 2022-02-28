@@ -37,6 +37,7 @@
     <app-player-choice (combinationPlayer)="validation($event)"
                        (configurationToDisplay)="configurationToDisplay($event)"
                        (solutionByPlayer)="validationSolution($event)"
+                       (restart)="start()"
                        [gameOn] = "gameOn"
                        [nbrOfPins]= "nbrOfPins" 
                        [choosingSolution]="multiplayer"
@@ -54,5 +55,7 @@
 <div>
     <button *ngIf="!gameOn" (click)="start()" class="button buttonValid">New game</button>
 </div>
+
+
 
 

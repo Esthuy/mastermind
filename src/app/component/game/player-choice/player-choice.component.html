@@ -1,8 +1,9 @@
 
 <div *ngIf="choosingSolution">Le joueur 1 peux entrer la solution à l'abris des regards</div>
+<br>
 
-<!--TODO afficher qq chose quand joueur 2 doit jouer ?   -->
-
+<div *ngIf="player2message">à toi joueur 2 ...</div>
+<br>
 
 <!-- Display chosen pin color by user -->
 <ng-container *ngIf="gameOn">
@@ -28,6 +29,10 @@
     <button *ngIf="displayValidationSolution" (click)="validationSolution()" class="button buttonValid">Enter the solution</button>  
  
     <button *ngIf="resetDisplayed" (click)="reset()" class="button buttonValid">Reset</button> 
+  
+    <br><br>
+    <button *ngIf="started" (click)="restart()" class="button buttonRestart">New game</button>
+  
 
 </div>
 
