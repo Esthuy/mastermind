@@ -4,8 +4,6 @@
 <!-- TODO vérifier les css pour virer superflus -->
 <!-- Changer pin status en colors (jaune-rouge et vert) pour n'afficher que  [ngStyle]="{ 'background-color': pin.color, 'border-color: pin.status'}" -->
 
-<!-- TODO bug si multiplayer et restart cliqué plusieurs fois -->
-<!-- TODO bug, restart gris apparait tout de suite si restart noir est préssé  -->
 
 
 <h3>Mastermind</h3>
@@ -42,6 +40,7 @@
                        [gameOn] = "gameOn"
                        [nbrOfPins]= "nbrOfPins" 
                        [choosingSolution]= "multiplayer"
+                       [started]= "started"
                        
                       ></app-player-choice>
     

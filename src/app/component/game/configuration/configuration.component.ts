@@ -44,7 +44,7 @@ export class ConfigurationComponent implements OnInit {
   }
 
   multiChecked(){
-    this.multiplayer = !this.multiplayer; 
+    this.multiplayer = true;  
     this.multiplayerEmitter.emit(this.multiplayer); 
     this.displayConfiguration = false; 
   }

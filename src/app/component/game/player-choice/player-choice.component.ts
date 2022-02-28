@@ -107,8 +107,8 @@ export class PlayerChoiceComponent implements OnInit {
     this.reset(); 
     this.startEmitter.emit(); 
     this.started = false; 
-    this.player2message = false; 
     this.choosingSolution = false; 
+    this.player2message = false; 
   }
 
   validation(){

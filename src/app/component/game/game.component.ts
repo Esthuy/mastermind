@@ -17,6 +17,9 @@ export class GameComponent {
   playerLose: boolean = false; 
   displayConfiguration!: boolean; 
   multiplayer!: boolean;
+  startClicked! : boolean;  
+  started! : boolean; 
+  
 
  
   gameOn: boolean = true;
@@ -78,10 +81,14 @@ export class GameComponent {
     this.playerWin = false; 
     this.playerLose = false; 
     this.displayConfiguration = true; 
+    this.startClicked = true; 
+    this.multiplayer = false; 
+    this.started = false; 
   }
 
  
   validation(combinationPlayer : Pin[]) {
+    this.startClicked = false;
     console.log(combinationPlayer);
     let correctPin: number = 0; 
     const oneCombination = [];
