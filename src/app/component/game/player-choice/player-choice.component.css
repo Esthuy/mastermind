@@ -2,6 +2,9 @@ body{
     font-family: Arial;
  }
  
+ div{
+   font-family: Arial;
+ }
  .button {
      background-color: #4CAF50; /* Green */
      border: none;

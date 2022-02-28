@@ -1,4 +1,7 @@
 
+<div *ngIf="choosingSolution">Le joueur 1 peux entrer la solution à l'abris des regards</div>
+
+<!--TODO afficher qq chose quand joueur 2 doit jouer ?   -->
 
 
 <!-- Display chosen pin color by user -->
@@ -21,6 +24,8 @@
     <button (click)="onColorClick(colors['pink'])" class="button button7">pink</button> <br>
 
     <button *ngIf="enterDisplayed" (click)="validation()" class="button buttonValid">Enter</button>  
+
+    <button *ngIf="displayValidationSolution" (click)="validationSolution()" class="button buttonValid">Enter the solution</button>  
  
     <button *ngIf="resetDisplayed" (click)="reset()" class="button buttonValid">Reset</button> 
 

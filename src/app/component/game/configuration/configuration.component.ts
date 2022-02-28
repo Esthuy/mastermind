@@ -23,13 +23,14 @@ export class ConfigurationComponent implements OnInit {
   enterDisplayed: boolean = false; 
   resetDisplayed: boolean = false; 
 
-  combinationSolution: Pin[] =[]; 
-
   @Output('nbTries')
   nbtriesEmitter = new EventEmitter<number>(); 
 
   @Output('nbPin') 
   nbrPinEmitter = new EventEmitter<number>();
+
+  @Output('multiplayer')
+  multiplayerEmitter = new EventEmitter<boolean>(); 
 
   @Input()
   displayConfiguration!: boolean; 
@@ -40,6 +41,12 @@ export class ConfigurationComponent implements OnInit {
 
   onChangePins(){
     this.nbrPinEmitter.emit(this.nbrOfPins); 
+  }
+
+  multiChecked(){
+    this.multiplayer = !this.multiplayer; 
+    this.multiplayerEmitter.emit(this.multiplayer); 
+    this.displayConfiguration = false; 
   }
 
 

@@ -17,6 +17,7 @@ export class PlayerChoiceComponent implements OnInit {
   enterDisplayed: boolean = false; 
   resetDisplayed: boolean = false;
   displayConfiguration: boolean = true;
+  displayValidationSolution: boolean = false; 
  
 
   @Input('nbrOfPins')
@@ -25,16 +26,23 @@ export class PlayerChoiceComponent implements OnInit {
   @Input('gameOn')
   gameOn: boolean = true; 
 
+  @Input('choosingSolution')
+  choosingSolution: boolean = false; 
+
   @Output('combinationPlayer')
   playerEmitter = new EventEmitter<Pin[]>(); 
 
   @Output('configurationToDisplay')
   configurationToDisplay = new EventEmitter<boolean>();
 
+  @Output('solutionByPlayer')
+  solutionEmitter = new EventEmitter<Pin[]>(); 
+
  
 
 
   combinationPlayer : Pin[] = []; 
+  solutionByPlayer : Pin[] = []; 
 
 
 
@@ -66,9 +74,12 @@ export class PlayerChoiceComponent implements OnInit {
       }
 
     //Display "enter" button when needed 
-    if(this.combinationPlayer.length == this.nbrOfPins){
-      this.enterDisplayed = true; 
-    }
+    if(this.combinationPlayer.length == this.nbrOfPins &&  this.choosingSolution == true){
+        this.displayValidationSolution = true; 
+      }
+      else if (this.combinationPlayer.length == this.nbrOfPins){
+        this.enterDisplayed = true; 
+      }
 
     //Display "reset" button when needed 
     if(this.combinationPlayer.length > 0){
@@ -81,10 +92,17 @@ export class PlayerChoiceComponent implements OnInit {
     this.combinationPlayer = []; 
     this.enterDisplayed = false; 
     this.resetDisplayed = false; 
+    this.displayValidationSolution = false; 
   }
 
   validation(){
     this.playerEmitter.emit(this.combinationPlayer); 
+    this.reset(); 
+  }
+
+  validationSolution(){
+    this.solutionByPlayer = this.combinationPlayer; 
+    this.solutionEmitter.emit(this.solutionByPlayer); 
     this.reset(); 
   }
 }

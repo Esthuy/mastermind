@@ -16,6 +16,8 @@ export class GameComponent {
   playerWin: boolean = false; 
   playerLose: boolean = false; 
   displayConfiguration!: boolean; 
+  multiplayer!: boolean; 
+
  
   gameOn: boolean = true;
 
@@ -139,7 +141,16 @@ export class GameComponent {
       this.gameOn = false; 
       this.playerLose = true;
     }
+  }
 
+  multiplayerOn(multiplayerOn : boolean){
+    this.multiplayer = multiplayerOn; 
+  }
+
+  validationSolution(solutionPlayer : Pin[]){
+    this.combinationSolution = []; 
+    this.combinationSolution = solutionPlayer; 
+    this.multiplayer = false; 
   }
 
   configurationToDisplay(display: boolean){

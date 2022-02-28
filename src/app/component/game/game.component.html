@@ -20,30 +20,39 @@
     <p class="message">Désolée, vous avez perdu... </p>
 </div>
 
-
+<!-- Display the configuration settings -->
 <div>
     <app-configuration [displayConfiguration] = "displayConfiguration"
                        (nbPin)="changeNbrPins($event)"
                        (nbTries)="changeNbrTries($event)"
+                       (multiplayer)="multiplayerOn($event)"
                        ></app-configuration>
 <br>
+
+<!-- Display all the old combinations -->
     <app-old-combination [oldCombination]= "oldCombination"></app-old-combination>
 
+    
+<!-- Dispay the player choice -->
     <app-player-choice (combinationPlayer)="validation($event)"
                        (configurationToDisplay)="configurationToDisplay($event)"
+                       (solutionByPlayer)="validationSolution($event)"
                        [gameOn] = "gameOn"
-                       [nbrOfPins]= "nbrOfPins" ></app-player-choice>
+                       [nbrOfPins]= "nbrOfPins" 
+                       [choosingSolution]="multiplayer"
+                      ></app-player-choice>
     
+    
+<!-- Display the solution -->
     <app-solution [solution] = "combinationSolution" 
                   [gameOn] = "gameOn" ></app-solution>
 </div>
 
 <br>
 
-
-
-
+<!-- Display the button start -->
 <div>
     <button *ngIf="!gameOn" (click)="start()" class="button buttonValid">New game</button>
 </div>
+
 

@@ -28,6 +28,10 @@ div, h3{
    padding: 10px 26px;
  }
 
+ .buttonRestart {
+   background-color: rgb(145, 142, 142);
+   padding: 10px 26px;
+ }
 .choice{
    background-color: #d0d3d0;
    border: none;
