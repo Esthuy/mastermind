@@ -37,6 +37,7 @@
                        (configurationToDisplay)="configurationToDisplay($event)"
                        (solutionByPlayer)="validationSolution($event)"
                        (start)="start()"
+                       (colors)="changeColors($event)"
                        [gameOn] = "gameOn"
                        [nbrOfPins]= "nbrOfPins" 
                        [choosingSolution]= "multiplayer"
@@ -52,10 +53,7 @@
 
 <br>
 
-<!-- Display the button start -->
-<div>
-    <button *ngIf="!gameOn" (click)="start()" class="button buttonValid">New game</button>
-</div>
+
 
 
 

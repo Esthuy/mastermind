@@ -4,7 +4,6 @@ body, div{
  
  
  .button {
-     background-color: #4CAF50; /* Green */
      border: none;
      color: white;
      padding: 15px 32px;
@@ -15,13 +14,6 @@ body, div{
      margin: 4px 2px;
      cursor: pointer;
    }
-  
-   .button2 {background-color: #008CBA;} /* Blue */
-   .button3 {background-color: #f44336;} /* Red */ 
-   .button4 {background-color: #e2d40b;} /* yellow */ 
-   .button5 {background-color: #4e380b;} /* Brown*/
-   .button6 {background-color: #920cb4;} /* Purple*/
-   .button7 {background-color: #e73981;} /* Pink*/
 
    .buttonValid {
     background-color: rgb(75, 71, 71);
@@ -29,8 +21,9 @@ body, div{
   }
 
   .buttonRestart{
-    background-color: rgb(155, 150, 150);
-    padding: 10px 14px;
+    background-color: rgb(97, 90, 90);
+    font-size: 15px;
+    padding: 10px 16px;
   }
 
  .choice{

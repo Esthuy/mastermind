@@ -19,7 +19,6 @@ export class PlayerChoiceComponent implements OnInit {
   displayConfiguration: boolean = true;
   displayValidationSolution: boolean = false; 
   player2message: boolean = false; 
- 
 
   @Input('nbrOfPins')
   nbrOfPins!: number;  
@@ -44,15 +43,31 @@ export class PlayerChoiceComponent implements OnInit {
 
   @Output('start')
   startEmitter = new EventEmitter(); 
+
+  @Output('colors')
+  colorsEmitter = new EventEmitter<{
+    [color: string] : Color, 
+  }>(); 
  
 
 
   combinationPlayer : Pin[] = []; 
   solutionByPlayer : Pin[] = []; 
 
-
-
   colors:{
+    [color: string] : Color, 
+  } = {
+    "blue" : "#008CBA",
+    "green" : "#4CAF50", 
+    "red" : "#f44336", 
+    "yellow" : "#e2d40b", 
+    "brown" : "#4e380b", 
+    "purple" : "#920cb4", 
+    "pink" : "#e73981"
+  }
+
+
+  colorsBase:{ 
     [color: string] : Color, 
   } = {
     "blue" : "#008CBA",
@@ -95,12 +110,17 @@ export class PlayerChoiceComponent implements OnInit {
     }
   }
 
+  onChange(){
+    this.colorsEmitter.emit(this.colors); 
+  }
+
 
   reset(){
     this.combinationPlayer = []; 
     this.enterDisplayed = false; 
     this.resetDisplayed = false; 
     this.displayValidationSolution = false; 
+    this.displayConfiguration = true; 
   }
 
   start(){
@@ -108,7 +128,8 @@ export class PlayerChoiceComponent implements OnInit {
     this.startEmitter.emit(); 
     this.started = false; 
     this.choosingSolution = false; 
-    this.player2message = false; 
+    this.player2message = false;
+    this.colors = this.colorsBase;  
   }
 
   validation(){
