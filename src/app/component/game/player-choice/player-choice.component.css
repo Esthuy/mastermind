@@ -2,6 +2,11 @@ body, div{
     font-family: Arial;
  }
  
+ input[type="color"] {
+	border: none;
+	width: 50px;
+	height: 32px;
+}
  
  .button {
      border: none;
@@ -15,59 +20,21 @@ body, div{
      cursor: pointer;
    }
 
-   .buttonValid {
-    background-color: rgb(75, 71, 71);
-    padding: 10px 26px;
-  }
+   .grey{
+      background-color: rgb(148, 143, 143);
+   }
 
-  .buttonRestart{
-    background-color: rgb(97, 90, 90);
-    font-size: 15px;
-    padding: 10px 16px;
-  }
+   .choice{
+      background-color: #d0d3d0;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+   }
 
- .choice{
-    background-color: #d0d3d0;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
- }
+ 
 
-
- .correct{
-    border: solid;
-    border-color: rgb(13, 252, 13);
-    border-width: 0.1cm; 
- }
-
- .wrong-color{
-    border: solid;
-    border-color: rgb(255, 0, 0); 
-    border-width: 0.1cm; 
- }
-
- .wrong-position{
-   border: solid;
-   border-color: rgb(255, 238, 3); 
-   border-width: 0.1cm; 
- }
-
- .message{
-    color: rgb(17, 16, 16);
-    font-size: large;
- }
-  
- .oldCombination{
-    display: flex;
-    flex-direction: column;
- }
-
- .configuration{
-   cursor: pointer;
-   background-color: rgb(227, 237, 253);
- }

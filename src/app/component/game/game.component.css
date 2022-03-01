@@ -8,78 +8,7 @@ h3{
    color: rgb(73, 73, 73)
 }
 
-
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
- 
-  .button2 {background-color: #008CBA;} /* Blue */
-  .button3 {background-color: #f44336;} /* Red */ 
-  .button4 {background-color: #e2d40b;} /* yellow */ 
-  .button5 {background-color: #4e380b;} /* Brown*/
-  .button6 {background-color: #920cb4;} /* Purple*/
-  .button7 {background-color: #e73981;} /* Pink*/
-
-  .buttonValid {
-   background-color: rgb(75, 71, 71);
-   padding: 10px 26px;
- }
-
- .buttonRestart {
-   background-color: rgb(145, 142, 142);
-   padding: 10px 26px;
- }
-.choice{
-   background-color: #d0d3d0;
-   border: none;
-   color: white;
-   padding: 15px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 16px;
-   margin: 4px 2px;
-}
-
-
-.correct{
-   border: solid;
-   border-color: rgb(13, 252, 13);
-   border-width: 0.1cm; 
-}
-
-.wrong-color{
-   border: solid;
-   border-color: rgb(255, 0, 0); 
-   border-width: 0.1cm; 
-}
-
-.wrong-position{
-  border: solid;
-  border-color: rgb(255, 238, 3); 
-  border-width: 0.1cm; 
-}
-
 .message{
    color: rgb(17, 16, 16);
    font-size: large;
-}
- 
-.oldCombination{
-   display: flex;
-   flex-direction: column;
-}
-
-.configuration{
-  cursor: pointer;
-  background-color: rgb(227, 237, 253);
 }

@@ -125,11 +125,11 @@ export class PlayerChoiceComponent implements OnInit {
 
   start(){
     this.reset(); 
-    this.startEmitter.emit(); 
     this.started = false; 
     this.choosingSolution = false; 
     this.player2message = false;
-    this.colors = this.colorsBase;  
+    this.colors = JSON.parse(JSON.stringify(this.colorsBase)); //réinitialise le tableau 
+    this.startEmitter.emit();   
   }
 
   validation(){
