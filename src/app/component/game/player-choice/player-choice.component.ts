@@ -20,6 +20,9 @@ export class PlayerChoiceComponent implements OnInit {
   displayValidationSolution: boolean = false; 
   player2message: boolean = false; 
 
+  @Input('pseudo')
+  pseudo: string = "joueur1"; 
+
   @Input('nbrOfPins')
   nbrOfPins!: number;  
 
@@ -128,6 +131,7 @@ export class PlayerChoiceComponent implements OnInit {
     this.started = false; 
     this.choosingSolution = false; 
     this.player2message = false;
+    this.pseudo = "joueur1"; 
     this.colors = JSON.parse(JSON.stringify(this.colorsBase)); //réinitialise le tableau 
     this.startEmitter.emit();   
   }
