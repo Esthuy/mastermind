@@ -19,9 +19,6 @@ export class GameComponent {
   multiplayer!: boolean;
   startClicked! : boolean;  
   started! : boolean; 
-  
-
- 
   gameOn: boolean = true;
 
   nbrOfTries: number = 0; 
@@ -137,16 +134,16 @@ export class GameComponent {
 
     //End game if user win 
     if(correctPin == this.nbrOfPins){
-      this.gameOn = false; 
-      this.playerWin = true; 
+      this.playerWin = true;
+      this.gameOn = false;  
     }
 
     this.nbrOfTries++; 
 
     //End game if user lose 
     if(this.nbrOfTries == this.chosenNbrOfTries && correctPin < this.nbrOfPins){
-      this.gameOn = false; 
       this.playerLose = true;
+      this.gameOn = false; 
     }
   }
 
@@ -158,6 +155,13 @@ export class GameComponent {
     this.combinationSolution = []; 
     this.combinationSolution = solutionPlayer; 
     this.multiplayer = false; 
+  }
+
+  changeColors( colorTab : {
+    [color: string] : Color, 
+  }){
+    this.colors = colorTab; 
+    this.initializeSolution();
   }
 
   configurationToDisplay(display: boolean){

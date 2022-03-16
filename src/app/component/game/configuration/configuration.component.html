@@ -1,4 +1,4 @@
-<!-- Allow player to chose the number of pins and the numbers of tries -->
+<!-- Allow player to chose the number of pins, the numbers of tries, and a the solution if multiplayer mode -->
 
 <div *ngIf="displayConfiguration" class="configuration">
     <label for="tries">Nombres d'essais autorisés</label><br>
@@ -29,6 +29,8 @@
     <label for="multiPlayer">Multijoueur</label>
     <input type="checkbox" id="multiPlayer" (change)="multiChecked()">
 </div>
+
+
 </div>
 
 

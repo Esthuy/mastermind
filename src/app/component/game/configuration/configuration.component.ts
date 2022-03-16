@@ -23,6 +23,7 @@ export class ConfigurationComponent implements OnInit {
   enterDisplayed: boolean = false; 
   resetDisplayed: boolean = false; 
 
+
   @Output('nbTries')
   nbtriesEmitter = new EventEmitter<number>(); 
 

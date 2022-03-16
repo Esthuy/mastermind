@@ -1,7 +1,4 @@
 
-
-
-
 <h3>Mastermind</h3>
 
 <!-- Display message when user wins -->
@@ -27,12 +24,16 @@
 <!-- Display all the old combinations -->
     <app-old-combination [oldCombination]= "oldCombination"></app-old-combination>
 
+<!-- Display the solution -->
+    <app-solution [solution] = "combinationSolution" 
+                  [gameOn] = "gameOn" ></app-solution>
     
 <!-- Dispay the player choice -->
     <app-player-choice (combinationPlayer)="validation($event)"
                        (configurationToDisplay)="configurationToDisplay($event)"
                        (solutionByPlayer)="validationSolution($event)"
                        (start)="start()"
+                       (colors)="changeColors($event)"
                        [gameOn] = "gameOn"
                        [nbrOfPins]= "nbrOfPins" 
                        [choosingSolution]= "multiplayer"
@@ -41,17 +42,12 @@
                       ></app-player-choice>
     
     
-<!-- Display the solution -->
-    <app-solution [solution] = "combinationSolution" 
-                  [gameOn] = "gameOn" ></app-solution>
+
 </div>
 
 <br>
 
-<!-- Display the button start -->
-<div>
-    <button *ngIf="!gameOn" (click)="start()" class="button buttonValid">New game</button>
-</div>
+
 
 
 

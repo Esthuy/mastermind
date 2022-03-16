@@ -2,8 +2,9 @@
 <div *ngIf="choosingSolution">Le joueur 1 peux entrer la solution à l'abris des regards</div>
 <br>
 
-<div *ngIf="player2message">à toi joueur 2 ...</div>
+<div *ngIf="player2message">à toi joueur2 ...</div>
 <br>
+
 
 <!-- Display chosen pin color by user -->
 <ng-container *ngIf="gameOn">
@@ -13,30 +14,37 @@
     </td> 
 </ng-container>
 
+
 <!-- Display button to chose pin colors-->
 <div *ngIf="gameOn">
-    <button (click)="onColorClick(colors['green'])" class="button">green</button> 
-    <button (click)="onColorClick(colors['blue'])" class="button button2">blue</button> 
-    <button (click)="onColorClick(colors['red'])" class="button button3" >red</button> 
-    <button (click)="onColorClick(colors['yellow'])" class="button button4">yellow</button> 
-    <button (click)="onColorClick(colors['brown'])" class="button button5">brown</button> 
-    <button (click)="onColorClick(colors['purple'])" class="button button6">purple</button> 
-    <button (click)="onColorClick(colors['pink'])" class="button button7">pink</button> <br>
+    <button (click)="onColorClick(colors['green'])" class="button" [ngStyle]="{ 'background-color': colors['green'] }">green</button> 
+    <button (click)="onColorClick(colors['blue'])" class="button" [ngStyle]="{ 'background-color': colors['blue'] }">blue</button> 
+    <button (click)="onColorClick(colors['red'])" class="button" [ngStyle]="{ 'background-color': colors['red'] }" >red</button> 
+    <button (click)="onColorClick(colors['yellow'])" class="button" [ngStyle]="{ 'background-color': colors['yellow'] }">yellow</button> 
+    <button (click)="onColorClick(colors['brown'])" class="button" [ngStyle]="{ 'background-color': colors['brown'] }">brown</button> 
+    <button (click)="onColorClick(colors['purple'])" class="button" [ngStyle]="{ 'background-color': colors['purple'] }">purple</button> 
+    <button (click)="onColorClick(colors['pink'])" class="button" [ngStyle]="{ 'background-color': colors['pink'] }">pink</button> <br>
 
-    <button *ngIf="enterDisplayed" (click)="validation()" class="button buttonValid">Enter</button>  
+    <button *ngIf="enterDisplayed" (click)="validation()" class="button grey">Enter</button>  
 
-    <button *ngIf="displayValidationSolution" (click)="validationSolution()" class="button buttonValid">Enter the solution</button>  
+    <button *ngIf="displayValidationSolution" (click)="validationSolution()" class="button grey">Enter the solution</button>  
  
-    <button *ngIf="resetDisplayed" (click)="reset()" class="button buttonValid">Reset</button> 
-  
-    <br><br>
-    <button *ngIf="started" (click)="start()" class="button buttonRestart">New game</button>
-  
+    <button *ngIf="resetDisplayed" (click)="reset()" class="button grey">Reset</button>  
 </div>
 
+<br>
+
+<button *ngIf="started" (click)="start()" class="button grey">New game</button> 
 
 
-
-
-
+<!-- Display button to change colors if player want to  -->
+<div *ngIf="!started && !choosingSolution">
+    <input type="color" [(ngModel)]="colors['green']" (change)="onChange()">
+    <input type="color" [(ngModel)]="colors['blue']" (change)="onChange()">
+    <input type="color" [(ngModel)]="colors['red']" (change)="onChange()">
+    <input type="color" [(ngModel)]="colors['yellow']" (change)="onChange()">
+    <input type="color" [(ngModel)]="colors['brown']" (change)="onChange()">
+    <input type="color" [(ngModel)]="colors['purple']" (change)="onChange()">
+    <input type="color" [(ngModel)]="colors['pink']" (change)="onChange()">
+</div>
 
