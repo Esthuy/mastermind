@@ -1,7 +1,7 @@
 <!-- Allow player to chose the number of pins, the numbers of tries, and a the solution if multiplayer mode -->
 
 <div *ngIf="displayConfiguration" class="configuration">
-    <label for="tries">Nombres d'essais autorisés</label><br>
+    <label for="tries">Number of tries</label><br>
     <select  [(ngModel)]="chosenNbrOfTries" (change)="onChangeTries()">
         <option value="3">3</option>
         <option value="4">4</option>
@@ -14,7 +14,7 @@
 </select>
 
 <br>
-<label for="pins">Nombres de couleurs à trouver</label><br>
+<label for="pins">Number of pins to find</label><br>
 <select id="pins" [(ngModel)]="nbrOfPins" (change)="onChangePins()">
     <option value="3">3</option>
     <option value="4">4</option>
@@ -26,7 +26,7 @@
 <br>
 
 <div>
-    <label for="multiPlayer">Multijoueur</label>
+    <label for="multiPlayer">Multiplayer</label>
     <input type="checkbox" id="multiPlayer" (change)="multiChecked()">
 </div>
 

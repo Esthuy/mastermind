@@ -20,9 +20,6 @@ export class PlayerChoiceComponent implements OnInit {
   displayValidationSolution: boolean = false; 
   player2message: boolean = false; 
 
-  @Input('pseudo')
-  pseudo: string = "joueur1"; 
-
   @Input('nbrOfPins')
   nbrOfPins!: number;  
 
@@ -96,7 +93,7 @@ export class PlayerChoiceComponent implements OnInit {
         status: undefined
         })
       } else{
-        alert("Vous avez déjà choisis toutes les couleurs, veuillez valider ou réinitialiser")
+        alert("You already choosed all the pins color, please press enter or reset your combination")
       }
 
     //Display "enter" button when needed 
@@ -131,7 +128,6 @@ export class PlayerChoiceComponent implements OnInit {
     this.started = false; 
     this.choosingSolution = false; 
     this.player2message = false;
-    this.pseudo = "joueur1"; 
     this.colors = JSON.parse(JSON.stringify(this.colorsBase)); //réinitialise le tableau 
     this.startEmitter.emit();   
   }

@@ -1,8 +1,7 @@
-
-<div *ngIf="choosingSolution">Le joueur 1 peux entrer la solution à l'abris des regards</div>
+<div *ngIf="choosingSolution">Player 1 can enter the solution secretly </div>
 <br>
 
-<div *ngIf="player2message">à toi joueur2 ...</div>
+<div *ngIf="player2message">Player 2, it's your turn to play </div>
 <br>
 
 
@@ -32,9 +31,9 @@
     <button *ngIf="resetDisplayed" (click)="reset()" class="button grey">Reset</button>  
 </div>
 
-<br>
 
-<button *ngIf="started" (click)="start()" class="button grey">New game</button> 
+<br><br><br>
+<button *ngIf="!gameOn" (click)="start()" class="button grey">New game</button> 
 
 
 <!-- Display button to change colors if player want to  -->
