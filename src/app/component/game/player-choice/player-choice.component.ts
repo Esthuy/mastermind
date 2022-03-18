@@ -18,6 +18,7 @@ export class PlayerChoiceComponent implements OnInit {
   resetDisplayed: boolean = false;
   displayConfiguration: boolean = true;
   displayValidationSolution: boolean = false; 
+  displayInstruction: boolean = false; 
   player2message: boolean = false; 
 
   @Input('nbrOfPins')
@@ -85,6 +86,7 @@ export class PlayerChoiceComponent implements OnInit {
     this.started = true; 
     this.displayConfiguration = false; 
     this.configurationToDisplay.emit(this.displayConfiguration); 
+    this.displayInstruction = false; 
 
     //Add chosen pin to the combinationPlayer 
     if(this.combinationPlayer.length < this.nbrOfPins){
@@ -128,11 +130,13 @@ export class PlayerChoiceComponent implements OnInit {
     this.started = false; 
     this.choosingSolution = false; 
     this.player2message = false;
+    this.displayInstruction = false; 
     this.colors = JSON.parse(JSON.stringify(this.colorsBase)); //réinitialise le tableau 
     this.startEmitter.emit();   
   }
 
   validation(){
+    this.displayInstruction = true; 
     this.playerEmitter.emit(this.combinationPlayer); 
     this.reset(); 
   }

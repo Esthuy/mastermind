@@ -13,7 +13,9 @@
     </td> 
 </ng-container>
 
-<div *ngIf="!started && !choosingSolution" class="instruction">Choose a color to start a game</div><br>
+<div *ngIf="!started && !choosingSolution" class="instruction">Choose a color to start a game</div>
+
+<div *ngIf="displayInstruction && gameOn" class="instruction">Next round, choose your colors</div><br>
 
 <!-- Display button to chose pin colors-->
 <div *ngIf="gameOn">
@@ -33,7 +35,7 @@
 </div>
 
 
-<br><br><br>
+<br>
 <button *ngIf="!gameOn" (click)="start()" class="button grey">New game</button> 
 
 
@@ -49,4 +51,7 @@
     <input type="color" [(ngModel)]="colors['purple']" (change)="onChange()">
     <input type="color" [(ngModel)]="colors['pink']" (change)="onChange()">
 </div>
+
+<br><br><br><br>
+<button *ngIf="started && gameOn" (click)="start()" class="button newGame">New game</button> 
 

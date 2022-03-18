@@ -40,5 +40,12 @@ body, div{
       color: grey;
    }
 
+   .newGame{
+      font-size: small;
+      background-color: #c0bdbd;
+      padding: 10px 24px;
+
+   }
+
  
 

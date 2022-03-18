@@ -4,3 +4,6 @@ select{
   width: 40px;
 }
 
+.instruction{
+  color: grey;
+}
