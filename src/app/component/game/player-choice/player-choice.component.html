@@ -13,6 +13,7 @@
     </td> 
 </ng-container>
 
+<div *ngIf="!started && !choosingSolution" class="instruction">Choose a color to start a game</div><br>
 
 <!-- Display button to chose pin colors-->
 <div *ngIf="gameOn">
@@ -35,6 +36,8 @@
 <br><br><br>
 <button *ngIf="!gameOn" (click)="start()" class="button grey">New game</button> 
 
+
+<div *ngIf="!started && !choosingSolution" class="instruction">Change the colors to find (optional)</div><br>
 
 <!-- Display button to change colors if player want to  -->
 <div *ngIf="!started && !choosingSolution">
