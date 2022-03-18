@@ -1,7 +1,7 @@
-<div *ngIf="choosingSolution">Player 1 can enter the solution secretly </div>
+<div *ngIf="choosingSolution" class="instruction">Player 1 can enter the solution secretly </div>
 <br>
 
-<div *ngIf="player2message">Player 2, it's your turn to play </div>
+<div *ngIf="player2message" class="instruction">Player 2, it's your turn to play </div>
 <br>
 
 
@@ -52,6 +52,6 @@
     <input type="color" [(ngModel)]="colors['pink']" (change)="onChange()">
 </div>
 
-<br><br><br><br>
+
 <button *ngIf="started && gameOn" (click)="start()" class="button newGame">New game</button> 
 
