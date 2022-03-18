@@ -20,6 +20,7 @@ export class PlayerChoiceComponent implements OnInit {
   displayValidationSolution: boolean = false; 
   displayInstruction: boolean = false; 
   player2message: boolean = false; 
+  colorChanged: boolean = false; 
 
   @Input('nbrOfPins')
   nbrOfPins!: number;  
@@ -114,6 +115,7 @@ export class PlayerChoiceComponent implements OnInit {
 
   onChange(){
     this.colorsEmitter.emit(this.colors); 
+    this.colorChanged = true; 
   }
 
 
@@ -130,6 +132,7 @@ export class PlayerChoiceComponent implements OnInit {
     this.started = false; 
     this.choosingSolution = false; 
     this.player2message = false;
+    this.colorChanged = false; 
     this.displayInstruction = false; 
     this.colors = JSON.parse(JSON.stringify(this.colorsBase)); //réinitialise le tableau 
     this.startEmitter.emit();   
@@ -147,6 +150,8 @@ export class PlayerChoiceComponent implements OnInit {
     this.reset(); 
     this.player2message = true; 
   }
+
+
 }
 
 

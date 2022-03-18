@@ -19,13 +19,13 @@
 
 <!-- Display button to chose pin colors-->
 <div *ngIf="gameOn">
-    <button (click)="onColorClick(colors['green'])" class="button" [ngStyle]="{ 'background-color': colors['green'] }">green</button> 
-    <button (click)="onColorClick(colors['blue'])" class="button" [ngStyle]="{ 'background-color': colors['blue'] }">blue</button> 
-    <button (click)="onColorClick(colors['red'])" class="button" [ngStyle]="{ 'background-color': colors['red'] }" >red</button> 
-    <button (click)="onColorClick(colors['yellow'])" class="button" [ngStyle]="{ 'background-color': colors['yellow'] }">yellow</button> 
-    <button (click)="onColorClick(colors['brown'])" class="button" [ngStyle]="{ 'background-color': colors['brown'] }">brown</button> 
-    <button (click)="onColorClick(colors['purple'])" class="button" [ngStyle]="{ 'background-color': colors['purple'] }">purple</button> 
-    <button (click)="onColorClick(colors['pink'])" class="button" [ngStyle]="{ 'background-color': colors['pink'] }">pink</button> <br>
+    <button (click)="onColorClick(colors['green'])" class="button" [ngStyle]="{ 'background-color': colors['green'] }">{{colorChanged ? "1" : "green"}}</button> 
+    <button (click)="onColorClick(colors['blue'])" class="button" [ngStyle]="{ 'background-color': colors['blue'] }">{{colorChanged ? "2" : "blue"}}</button> 
+    <button (click)="onColorClick(colors['red'])" class="button" [ngStyle]="{ 'background-color': colors['red'] }" >{{colorChanged ? "3" : "red"}}</button> 
+    <button (click)="onColorClick(colors['yellow'])" class="button" [ngStyle]="{ 'background-color': colors['yellow'] }">{{colorChanged ? "4" : "yellow"}}</button> 
+    <button (click)="onColorClick(colors['brown'])" class="button" [ngStyle]="{ 'background-color': colors['brown'] }">{{colorChanged ? "5" : "brown"}}</button> 
+    <button (click)="onColorClick(colors['purple'])" class="button" [ngStyle]="{ 'background-color': colors['purple'] }">{{colorChanged ? "6" : "purple"}}</button> 
+    <button (click)="onColorClick(colors['pink'])" class="button" [ngStyle]="{ 'background-color': colors['pink'] }">{{colorChanged ? "7" : "pink"}}</button> <br>
 
     <button *ngIf="enterDisplayed" (click)="validation()" class="button grey">Enter</button>  
 
@@ -38,8 +38,8 @@
 <br>
 <button *ngIf="!gameOn" (click)="start()" class="button grey">New game</button> 
 
-
-<div *ngIf="!started && !choosingSolution" class="instruction">Change the colors to find (optional)</div><br>
+<br><br><br>
+<div *ngIf="!started && !choosingSolution" class="instruction">Custom the colors to find (optional)</div><br>
 
 <!-- Display button to change colors if player want to  -->
 <div *ngIf="!started && !choosingSolution">
