@@ -24,8 +24,8 @@ export class GameComponent {
   nbrOfTries: number = 0; 
   chosenNbrOfTries!: number; 
   nbrOfPins!: number;  
-  
-  colors:{
+
+  baseColors:{
     [color: string] : Color, 
   } = {
     "blue" : "#008CBA",
@@ -36,6 +36,10 @@ export class GameComponent {
     "purple" : "#920cb4", 
     "pink" : "#e73981"
   }
+  
+  colors:{
+    [color: string] : Color, 
+  } = this.baseColors; 
 
   randomColors:{
     [indice: number] : string, 
@@ -71,6 +75,7 @@ export class GameComponent {
 
 
   start(){
+    this.colors = this.baseColors; 
     this.initializeSolution();  
     this.oldCombination = [[]]; 
     this.gameOn = true; 
